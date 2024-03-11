@@ -1,0 +1,46 @@
+{
+    "env": { "browser": true, "es2020": true },
+    "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:react/jsx-runtime", "plugin:react-hooks/recommended"],
+    "parserOptions": { "ecmaVersion": "latest", "sourceType": "module", "babelOptions": { "presets": ["@babel/preset-react"] }, "requireConfigFile": false },
+    "settings": { "react": { "version": "18.2" } },
+    "plugins": ["react", "prettier", "react-refresh"],
+    "globals": {
+        "React": "readonly" // Marks 'React' as a read-only variable (optional, but good practice).
+    },
+    "rules": {
+        "prettier/prettier": "error",
+        "indent": ["error", 4,{ "SwitchCase": 1 }],
+        "linebreak-style": 0,
+        "no-var": "error",
+        "quotes": ["error", "single"],
+        "react/prop-types": "off",
+        "react/jsx-uses-vars": "error",
+        "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }],
+        "react/jsx-indent": ["error", 4],
+        "react/jsx-indent-props": ["error", 4],
+        "no-unused-vars": ["error", { "argsIgnorePattern": "^_", "varsIgnorePattern": "^React$" }],
+        "no-console": "error",
+        "eqeqeq": "error",
+        "camelcase": [
+            "error",
+            {
+                "properties": "always",
+                "ignoreGlobals": true,
+                "ignoreImports": true,
+                "allow": ["^VAR_[A-Z_]+$"]
+            }
+        ],
+        "react/no-multi-comp": ["error"],
+        "react/no-unescaped-entities": "off",
+        "react/no-unstable-nested-components": ["error"],
+        "react/button-has-type": [
+            "error",
+            {
+                "button": true,
+                "submit": true,
+                "reset": true
+            }
+        ],
+        "react-refresh/only-export-components": ["warn", { "allowConstantExport": true }]
+    }
+}
